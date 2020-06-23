@@ -3,7 +3,7 @@ const app = require("express")();
 const FBAuth = require("./util/fbAuth");
 
 const { getAllScreams, postOneScream } = require("./handlers/screams");
-const { signup, login } = require("./handlers/users");
+const { signup, login, uploadImage } = require("./handlers/users");
 
 //my application appears to be working without the reference to the private key
 //const serviceAccount = require("../service-account-file.json");
@@ -19,5 +19,6 @@ app.post("/scream", FBAuth, postOneScream);
 // Users routes
 app.post("/signup", signup);
 app.post("/login", login);
+app.post("/user/image", uploadImage);
 
 exports.api = functions.https.onRequest(app);
