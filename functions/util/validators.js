@@ -13,6 +13,7 @@ const isEmpty = (string) => {
   else return false;
 };
 
+// A function that validates signup data
 exports.validateSignupData = (data) => {
   let errors = {};
 
@@ -33,11 +34,12 @@ exports.validateSignupData = (data) => {
   };
 };
 
+//A function that validates login data
 exports.validateLoginData = (data) => {
   let errors = {};
 
-  if (isEmpty(user.email)) errors.email = "Must not be empty";
-  if (isEmpty(user.password)) errors.password = "Must not be empty";
+  if (isEmpty(data.email)) errors.email = "Must not be empty";
+  if (isEmpty(data.password)) errors.password = "Must not be empty";
 
   return {
     errors,
