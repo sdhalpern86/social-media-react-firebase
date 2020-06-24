@@ -144,4 +144,5 @@ exports.uploadImage = (req, res) => {
         return res.status(500).json({ error: err.code });
       });
   });
+  busboy.end(req.rawBody);
 };
